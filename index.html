@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevención Salud - Asesor Comercial</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sección Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="subtitulo">PREVENCIÓN SALUD de Sancor Seguros</h2>
+    <h1 class="animate-title">GRANDES BENEFICIOS PARA NUEVOS SOCIOS</h1>
+    <p>La mejor cobertura médica del país, con planes que se adaptan a vos.</p>
+    <a href="#contactForm" class="btn scroll-link">Cotizá el mejor plan para vos</a>
+  </div>
+</section>
+
+  <!-- Comparativa de Planes -->
+  <section id="planes" class="planes">
+    <h2>Nuestros Planes</h2>
+    <div class="planes-grid">
+      <div class="plan-card">
+        <h3>Plan A1</h3>
+        <ul>
+          <li>Atención sin copagos</li>
+          <li>Prótesis nacionales con cobertura total</li>
+          <li>Emergencias 24/7</li>
+          <li>Internaciones sin tope de días</li>
+          <li>Consultorio médico virtual</li>
+        </ul>
+      </div>
+      <div class="plan-card destacado">
+        <h3>Plan A2</h3>
+        <ul>
+          <li>Consultas con especialistas sin demoras</li>
+          <li>Habitación privada en internaciones</li>
+          <li>Atención médica a domicilio</li>
+          <li>Prácticas de laboratorio incluidas</li>
+          <li>Psicología y psiquiatría con cobertura</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <h3>Plan A4</h3>
+        <ul>
+          <li>Cartilla de prestigio nacional</li>
+          <li>100% en cirugía refractiva</li>
+          <li>Kinesiología y fisioterapia</li>
+          <li>Odontología y óptica avanzada</li>
+          <li>Asistencia al viajero en países limítrofes</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <h3>Plan A5</h3>
+        <ul>
+          <li>Todo lo del Plan A4</li>
+          <li>Estética y cirugía refractiva total</li>
+          <li>Implantes y prótesis odontológicas</li>
+          <li>Amplia cobertura en flebología</li>
+          <li>50% de descuento en farmacias</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios adicionales -->
+<section class="beneficios">
+  <h2>¿Por qué elegirnos?</h2>
+  <div class="beneficios-grid">
+    <div class="beneficio-card">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/hospital-room.png" alt="Cobertura nacional">
+      <h3>Cobertura Nacional</h3>
+      <p>Clínicas y sanatorios de primer nivel en todo el país para que tengas atención cerca tuyo.</p>
+    </div>
+    <div class="beneficio-card">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/doctor-male.png" alt="Consultorio virtual">
+      <h3>Consultorio Virtual 24/7</h3>
+      <p>Accedé a consultas médicas sin traslados y con atención inmediata desde tu casa.</p>
+    </div>
+    <div class="beneficio-card">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/user-male-circle.png" alt="Asesor personal">
+      <h3>Asesor Personal</h3>
+      <p>Un asesor siempre a tu lado, guiándote y acompañándote en cada paso de tu cobertura.</p>
+    </div>
+    <div class="beneficio-card">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/ambulance.png" alt="Emergencias">
+      <h3>Emergencias 24/7</h3>
+      <p>Asistencia inmediata en cualquier situación, sin importar la hora o el lugar.</p>
+    </div>
+    <div class="beneficio-card">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/heart-health.png" alt="Bienestar integral">
+      <h3>Bienestar Integral</h3>
+      <p>Cobertura completa en salud física y mental, para vos y tu familia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Formulario -->
+<section class="formulario">
+  <h2>Solicitá tu cotización</h2>
+  <form id="contactForm">
+    <input type="text" id="nombreApellido" placeholder="Nombre" required>
+    <input type="number" id="edad" placeholder="Edad" required>
+    <input type="tel" id="telefono" placeholder="Teléfono" required>
+
+<label>¿Tenés alguna patología?</label>
+<div class="radio-group">
+  <label><input type="radio" name="patologia" value="si"> Sí</label>
+  <label><input type="radio" name="patologia" value="no" checked> No</label>
+</div>
+
+    <textarea id="mensaje" placeholder="Aclaración opcional..."></textarea>
+    
+    <button type="submit" class="btn">Enviar por WhatsApp</button>
+  </form>
+</section>
+
+  <!-- Pop-up salida -->
+  <div id="exitPopup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup">&times;</span>
+      <h2>¡No te vayas sin tu cobertura!</h2>
+      <p>Consultá los beneficios y accedé al plan que mejor se adapte a vos.</p>
+      <a href="https://wa.me/3417467042" class="btn">Hablar por WhatsApp</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
