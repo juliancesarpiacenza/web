@@ -173,6 +173,61 @@ body {
   background: rgba(255,255,255,0.2);
 }
 
+
+/* Reseñas */
+.reseñas {
+  background: #f8e0f2; /* tono suave fucsia */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.reseñas h2 {
+  color: #d63384;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.carrusel-reseñas {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.reseña {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reseña:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.reseña p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.reseña h4 {
+  color: #d63384;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.estrellas {
+  color: #ffbf00;
+  font-size: 1.2rem;
+}
+
 /* Formulario */
 .formulario {
   padding: 60px 20px;
