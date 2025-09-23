@@ -12,10 +12,15 @@ body {
   line-height: 1.6;
 }
 
-/* HERO más chico */
+/* HERO actualizado */
 .hero {
-  background: url('file-HxHZXpyVWLB41PgZHgnEVS.png') no-repeat center center/cover;
-  height: 75vh; /* reducido */
+  background: linear-gradient(
+      rgba(233, 30, 99, 0.6),  /* fucsia con opacidad */
+      rgba(233, 30, 99, 0.6)
+    ),
+    url('https://images.pexels.com/photos/31848486/pexels-photo-31848486.jpeg') 
+    no-repeat center center/cover; /* Imagen IA familia feliz */
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +33,7 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(210, 64, 116, 0.6);
+  background: rgba(233, 30, 99, 0.6); /* fucsia consistente con la web */
 }
 
 .hero-content {
@@ -208,7 +213,7 @@ textarea {
   min-height: 80px;
 }
 
-/* Radios bonitos */
+/* Radios */
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -225,23 +230,38 @@ textarea {
   margin-right: 8px;
 }
 
-.radio-group input:checked + span {
-  background: #e91e63;
-  color: #fff;
+/* Oculto con animación */
+#patologia-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
 
+#patologia-container.show {
+  max-height: 200px; /* ajustá según lo que necesites */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Botón */
 button {
-  background: #fff;
-  color: #e91e63;
+  background: linear-gradient(135deg, #e91e63, #d81b60);
+  color: #fff;
   font-weight: 700;
-  border-radius: 30px;
-  padding: 12px;
-  transition: 0.3s;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
-  background: #f8bbd0;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.5);
+  background: linear-gradient(135deg, #d81b60, #c2185b);
 }
 
 /* Pop-up */

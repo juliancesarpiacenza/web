@@ -82,19 +82,19 @@
       <p>Accedé a consultas médicas sin traslados y con atención inmediata desde tu casa.</p>
     </div>
     <div class="beneficio-card">
-      <img src="https://img.icons8.com/ios-filled/100/ffffff/user-male-circle.png" alt="Asesor personal">
-      <h3>Asesor Personal</h3>
-      <p>Un asesor siempre a tu lado, guiándote y acompañándote en cada paso de tu cobertura.</p>
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/dental-braces.png" alt="Cobertura especializada">
+      <h3>La mejor cobertura especializada</h3>
+      <p>Ortodoncia, oftalmología, tratamientos odontológicos y más, con la calidad de la mejor prepaga.</p>
     </div>
     <div class="beneficio-card">
-      <img src="https://img.icons8.com/ios-filled/100/ffffff/ambulance.png" alt="Emergencias">
-      <h3>Emergencias 24/7</h3>
-      <p>Asistencia inmediata en cualquier situación, sin importar la hora o el lugar.</p>
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/document.png" alt="Trámites simples">
+      <h3>Mayor simplicidad en trámites</h3>
+      <p>Gestiones rápidas, claras y sin complicaciones para que no pierdas tiempo en tus trámites.</p>
     </div>
     <div class="beneficio-card">
-      <img src="https://img.icons8.com/ios-filled/100/ffffff/heart-health.png" alt="Bienestar integral">
-      <h3>Bienestar Integral</h3>
-      <p>Cobertura completa en salud física y mental, para vos y tu familia.</p>
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/handshake.png" alt="Respaldo Sancor">
+      <h3>Respaldo de Sancor Seguros</h3>
+      <p>Confianza, trayectoria y solidez de un grupo asegurador líder en Argentina.</p>
     </div>
   </div>
 </section>
@@ -109,11 +109,14 @@
 
 <label>¿Tenés alguna patología?</label>
 <div class="radio-group">
-  <label><input type="radio" name="patologia" value="si"> Sí</label>
   <label><input type="radio" name="patologia" value="no" checked> No</label>
+  <label><input type="radio" name="patologia" value="si"> Sí</label>
 </div>
 
-    <textarea id="mensaje" placeholder="Aclaración opcional..."></textarea>
+<div id="patologia-container" class="hidden">
+  <textarea id="mensaje" placeholder="Aclaración opcional..."></textarea>
+</div>
+
     
     <button type="submit" class="btn">Enviar por WhatsApp</button>
   </form>

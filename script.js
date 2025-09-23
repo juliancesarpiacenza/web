@@ -15,15 +15,16 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
   window.open(url, "_blank");
 });
 
-// Pop-up al intentar salir
-let popup = document.getElementById("exitPopup");
-let closePopup = document.getElementById("closePopup");
+// Mostrar/ocultar aclaración de patología
+const radios = document.querySelectorAll('input[name="patologia"]');
+const patologiaContainer = document.getElementById("patologia-container");
 
-window.onbeforeunload = function() {
-  popup.style.display = "flex";
-  return "¿Seguro que quieres salir?";
-};
-
-closePopup.onclick = function() {
-  popup.style.display = "none";
-};
+radios.forEach(radio => {
+  radio.addEventListener("change", function() {
+    if (this.value === "si") {
+      patologiaContainer.classList.add("show");
+    } else {
+      patologiaContainer.classList.remove("show");
+    }
+  });
+});
