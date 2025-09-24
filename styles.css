@@ -357,3 +357,17 @@ button:hover {
 html {
   scroll-behavior: smooth;
 }
+
+.footer-legal {
+  background: #f5f5f5; /* gris clarito para diferenciar */
+  color: #555;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer-legal p {
+  margin: 8px 0;
+}
