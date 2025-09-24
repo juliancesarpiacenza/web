@@ -388,3 +388,13 @@ html {
 .footer-legal p {
   margin: 8px 0;
 }
+
+/* Ajuste botones hero para móviles */
+@media (max-width: 768px) {
+    .hero .hero-content .btn {
+        display: block;       /* hacen que se apilen */
+        width: 80%;           /* ocupen casi todo el ancho */
+        margin: 10px auto;    /* espacio arriba y abajo y centrados */
+        text-align: center;   /* centran el texto */
+    }
+}
