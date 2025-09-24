@@ -75,10 +75,87 @@ body {
   transform: scale(1.05);
 }
 
+/* Botón destacado NO SOY AFILIADO */
+.btn-asesor {
+  background: #fff !important;      /* fondo blanco */
+  color: #e91e63 !important;        /* texto fucsia */
+  border: 2px solid #e91e63;        /* borde fucsia para darle fuerza */
+}
+
+.btn-asesor:hover {
+  background: #f8bbd0 !important;   /* rosita clarito al pasar mouse */
+  color: #c2185b !important;        /* texto fucsia más oscuro */
+  transform: scale(1.05);
+}
+
+/* Botón SOY AFILIADO en gris clarito */
+.btn-secundario {
+  background: #575757 !important;   /* gris clarito */
+  color: #f2f2f2 !important;           /* blanco para contraste */
+}
+
+.btn-secundario:hover {
+  background: #d1d1d1 !important;   /* gris un poco más fuerte al pasar mouse */
+  color: #333 !important;
+  transform: scale(1.05);
+}
+
+/* Beneficios */
+.beneficios {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #f9f9f9);
+  color: #333;
+  text-align: center;
+}
+
+.beneficios h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.beneficio-card {
+  background: rgba(214, 23, 118, 0.719);
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.3s, background 0.3s;
+  text-align: center;
+}
+
+.beneficio-card img {
+  margin-bottom: 15px;
+  width: 60px;
+  height: 60px;
+}
+
+.beneficio-card h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #ffffff; /* 👈 acá cambiás el color del título */
+}
+
+.beneficio-card p {
+  font-size: 0.95rem;
+  color: #fce4ee; /* 👈 texto más clarito, podés poner #333 si querés oscuro */
+}
+
+.beneficio-card:hover {
+  transform: translateY(-8px);
+  background: rgba(151, 37, 104, 0.781);
+}
+
+
 /* Planes */
 .planes {
   padding: 80px 20px;
-  background: #f9f9f9;
+  background:#f9f9f9;
   text-align: center;
 }
 
@@ -122,55 +199,6 @@ body {
 
 .destacado {
   border: 2px solid #e91e63;
-}
-
-/* Beneficios */
-.beneficios {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #e91e63, #9c27b0);
-  color: #fff;
-  text-align: center;
-}
-
-.beneficios h2 {
-  margin-bottom: 40px;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.beneficios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.beneficio-card {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  border-radius: 15px;
-  transition: transform 0.3s, background 0.3s;
-  text-align: center;
-}
-
-.beneficio-card img {
-  margin-bottom: 15px;
-  width: 60px;
-  height: 60px;
-}
-
-.beneficio-card h3 {
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.beneficio-card p {
-  font-size: 0.95rem;
-}
-
-.beneficio-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255,255,255,0.2);
 }
 
 
@@ -303,18 +331,19 @@ textarea {
 }
 
 /* Oculto con animación */
-#patologia-container {
+#modalPatologiaContainer {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: all 0.5s ease;
 }
 
-#patologia-container.show {
-  max-height: 200px; /* ajustá según lo que necesites */
+#modalPatologiaContainer.show {
+  max-height: 200px; /* ajustá según necesites */
   opacity: 1;
   margin-top: 10px;
 }
+
 
 /* Botón */
 button {
@@ -398,3 +427,103 @@ html {
         text-align: center;   /* centran el texto */
     }
 }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(6px); /* blurr fondo */
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #f06292, #ab47bc);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  color: #fff;
+  animation: slideIn 0.4s ease;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideIn {
+  from {transform: translateY(-40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(6px); /* blurr fondo */
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #f06292, #ab47bc);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  color: #fff;
+  animation: slideIn 0.4s ease;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideIn {
+  from {transform: translateY(-40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Pop-up de salida funcional */
+#exitPopup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 9999; }
+#exitPopup .popup-content { background: #fff; padding: 30px; border-radius: 12px; text-align: center; max-width: 400px; position: relative; }
+#closePopup { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; }
+#exitPatologiaContainer { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease; }
+#exitPatologiaContainer.show { max-height: 200px; opacity: 1; margin-top: 10px; }
+
