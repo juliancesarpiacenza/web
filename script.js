@@ -1,5 +1,25 @@
-// Formulario por WhatsApp
-document.getElementById("contactForm").addEventListener("submit", function(e){
+// Formulario de abajo de todo: "No soy afiliado, me quiero asesorar"
+const formAbajo = document.getElementById("contactForm");
+const patologiaContainerAbajo = document.getElementById("patologia-container"); // contenedor del textarea
+let origenFormAbajo = "NO SOY AFILIADO, ME QUIERO ASESORAR";
+
+// Ocultar el recuadro de patología al inicio
+patologiaContainerAbajo.classList.remove("show");
+
+// Mostrar/ocultar aclaración de patología según opción
+const radiosAbajo = document.querySelectorAll('input[name="patologia"]');
+radiosAbajo.forEach(radio => {
+  radio.addEventListener("change", function() {
+    if (this.value === "si") {
+      patologiaContainerAbajo.classList.add("show"); // muestra textarea solo si SI
+    } else {
+      patologiaContainerAbajo.classList.remove("show"); // oculta si NO
+    }
+  });
+});
+
+// Enviar formulario por WhatsApp
+formAbajo.addEventListener("submit", function(e){
   e.preventDefault();
   let nombre = document.getElementById("nombreApellido").value;
   let telefono = document.getElementById("telefono").value;
@@ -7,17 +27,32 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
   let mensaje = document.getElementById("mensaje").value;
   let patologia = document.querySelector('input[name="patologia"]:checked').value;
 
-  let url = `https://wa.me/3417467042?text=Hola, soy ${nombre}, tengo ${edad} años. 
-  Teléfono: ${telefono}. 
-  ¿Patología?: ${patologia}. 
-  ${mensaje}`;
+  let url = `https://wa.me/3417467042?text=Origen: ${origenFormAbajo}. Hola, soy ${nombre}, tengo ${edad} años. 
+Teléfono: ${telefono}. 
+¿Patología?: ${patologia}. 
+${mensaje}`;
   
   window.open(url, "_blank");
 });
 
 // Mostrar/ocultar aclaración de patología
-const radios = document.querySelectorAll('input[name="patologia"]');
 const patologiaContainer = document.getElementById("patologia-container");
+
+// Oculto al inicio
+patologiaContainer.style.display = "none";
+
+// Radios
+const radios = document.querySelectorAll('input[name="patologia"]');
+
+radios.forEach(radio => {
+  radio.addEventListener("change", function() {
+    if (this.value === "si") {
+      patologiaContainer.style.display = "block"; // aparece solo si SI
+    } else {
+      patologiaContainer.style.display = "none";  // desaparece si NO
+    }
+  });
+});
 
 radios.forEach(radio => {
   radio.addEventListener("change", function() {
@@ -50,6 +85,23 @@ window.addEventListener("click", (e) => {
 });
 
 // Formulario dentro del modal
+let origenFormulario = "";
+
+// Abrir modal "Me quiero asesorar"
+asesorBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  origenFormulario = "NO SOY AFILIADO, ME QUIERO ASESORAR";
+  asesorModal.style.display = "flex";
+});
+
+// Botón "Busco un descuento" del modal afiliados
+document.getElementById('descuentoWhatsapp').addEventListener('click', function(){
+  document.getElementById('afiliadoModal').style.display = 'none';
+  origenFormulario = "BUSCO UN DESCUENTO";
+  asesorModal.style.display = 'flex';
+});
+
+// Enviar formulario dentro del modal
 document.getElementById("asesorForm").addEventListener("submit", function(e){
   e.preventDefault();
   let nombre = document.getElementById("modalNombreApellido").value;
@@ -58,10 +110,11 @@ document.getElementById("asesorForm").addEventListener("submit", function(e){
   let mensaje = document.getElementById("modalMensaje").value;
   let patologia = document.querySelector('input[name="modalPatologia"]:checked').value;
 
-  let url = `https://wa.me/3417467042?text=Hola, soy ${nombre}, tengo ${edad} años. 
-  Teléfono: ${telefono}. 
-  ¿Patología?: ${patologia}. 
-  ${mensaje}`;
+  // Armar mensaje incluyendo el origen
+  let url = `https://wa.me/3417467042?text=Origen: ${origenFormulario}. Hola, soy ${nombre}, tengo ${edad} años. 
+Teléfono: ${telefono}. 
+¿Patología?: ${patologia}. 
+${mensaje}`;
   
   window.open(url, "_blank");
 });
@@ -151,8 +204,13 @@ document.getElementById('otraGestion').addEventListener('click', function(){
   window.location.href = 'https://www.prevencionsalud.com.ar/app-autogestion';
 });
 
+
+// Botón "Busco un descuento" del modal afiliados
 document.getElementById('descuentoWhatsapp').addEventListener('click', function(){
-  window.open('https://wa.me/3417467042', '_blank');
+  // Cerrar modal de afiliados
+  document.getElementById('afiliadoModal').style.display = 'none';
+  // Abrir modal de asesor (el mismo que se usa en "Me quiero asesorar")
+  document.getElementById('asesorModal').style.display = 'flex';
 });
 
 
