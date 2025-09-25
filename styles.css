@@ -579,3 +579,74 @@ html {
 .btn-modal:hover {
   background: #c2185b; /* fucsia más oscuro */
 }
+
+/* Ajustes generales para móviles */
+@media (max-width: 768px) {
+
+  /* HERO: títulos más pequeños y padding */
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitulo {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Beneficios: grid a 1 columna */
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Planes: grid a 1 columna */
+  .planes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Reseñas: carrusel vertical */
+  .carrusel-reseñas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reseña {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  /* Formularios: ancho completo y padding reducido */
+  .formulario {
+    max-width: 95%;
+    padding: 40px 15px;
+    margin: 20px auto;
+  }
+
+  form input,
+  form textarea,
+  button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* Footer: padding más chico */
+  .footer-legal {
+    padding: 20px 10px;
+    font-size: 11px;
+  }
+
+  /* Botones hero: ancho completo */
+  .hero .btn {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
