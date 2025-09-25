@@ -127,3 +127,32 @@ document.getElementById("exitForm").addEventListener("submit", function(e){
   window.open(url, "_blank");
 });
 
+// Abrir modal al hacer clic en "YA SOY AFILIADO"
+document.querySelector('.btn-secundario').addEventListener('click', function(e){
+  e.preventDefault();
+  document.getElementById('afiliadoModal').style.display = 'flex';
+});
+
+// Cerrar modal con la X
+document.getElementById('closeAfiliadoModal').addEventListener('click', function(){
+  document.getElementById('afiliadoModal').style.display = 'none';
+});
+
+// Cerrar modal haciendo clic fuera del recuadro
+window.addEventListener('click', function(e){
+  const modal = document.getElementById('afiliadoModal');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Redirecciones de botones dentro del modal
+document.getElementById('otraGestion').addEventListener('click', function(){
+  window.location.href = 'https://www.prevencionsalud.com.ar/app-autogestion';
+});
+
+document.getElementById('descuentoWhatsapp').addEventListener('click', function(){
+  window.open('https://wa.me/3417467042', '_blank');
+});
+
+
