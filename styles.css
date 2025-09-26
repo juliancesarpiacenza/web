@@ -684,3 +684,76 @@ html {
   color: #a33b6b; /* placeholder fucsia oscuro */
   opacity: 1;     /* asegurar visibilidad */
 }
+
+/* Ajustes generales para mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    transform: none; /* saca el corrimiento lateral */
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .planes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .reseña {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .formulario {
+    padding: 30px 15px;
+    margin: 20px;
+    border-radius: 15px;
+  }
+}
+
+/* Extra pequeños (celulares chicos <480px) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .beneficios h2,
+  .planes h2,
+  .reseñas h2,
+  .formulario h2 {
+    font-size: 1.5rem;
+  }
+
+  input, textarea, button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
